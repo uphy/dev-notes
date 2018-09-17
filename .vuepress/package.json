@@ -1,0 +1,15 @@
+{
+  "name": "dev-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "uphy",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-it-plantuml": "^1.2.0",
+    "vuepress": "^0.14.4"
+  },
+  "scripts": {
+    "dev": "vuepress dev ..",
+    "build": "vuepress build .."
+  }
+}

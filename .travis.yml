@@ -1,0 +1,23 @@
+sudo: required
+language: minimal
+
+services:
+  - docker
+
+cache:
+  directories:
+  - .vuepress/node_modules
+
+script:
+  # Build docs
+  - docker run --rm -v "$(pwd):/docs" node:8 bash -c "cd /docs/.vuepress && yarn && yarn build"
+
+deploy:
+  # Deploy docs to GitHub Pages
+  - provider: pages
+    github-token: $GITHUB_TOKEN
+    local-dir: .vuepress/dist
+    target-branch: gh-pages
+    skip_cleanup: true
+    on:
+      branch: master
