@@ -15,12 +15,12 @@ https://qiita.com/kinchiki/items/57e9391128d07819c321
 
 ### zshインストール
 
-```console
+```bash
 $ brew update
 $ brew install zsh
 ```
 
-/etc/shellsに以下を追加
+/etc/bashsに以下を追加
 
 ```diff
 /bin/bash
@@ -33,7 +33,7 @@ $ brew install zsh
 
 ログインシェル変更
 
-```console
+```bash
 $ chsh -s /usr/local/bin/zsh
 ```
 
@@ -43,7 +43,7 @@ exitしてログインしなおし。
 
 Zshに便利な設定いろいろ入れてくれるフレームワーク、[Prezto](https://github.com/sorin-ionescu/prezto)をインストール。
 
-```console
+```bash
 $ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 $ setopt EXTENDED_GLOB
   for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
@@ -81,7 +81,7 @@ zstyle ':prezto:load' pmodule \
 
 Preztoをアップデートするにはこんな感じにすればいいらしい。
 
-```console
+```bash
 $ cd $ZPREZTODIR
 $ git pull
 $ git submodule update --init --recursive

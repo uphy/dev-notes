@@ -9,7 +9,7 @@ Mac標準のGitが入っているが、より新しいものを使いたいの�
 brewではgitが/usr/local/Cellar/git/VERSION/にインストールされる。  
 `brew link`そのディレクトリへのシンボリックリンクを/usr/local/git/に作成してくれる。
 
-```console
+```bash
 $ brew install git
 $ brew link --overwrite git
 Linking /usr/local/Cellar/git/2.19.0_1... 203 symlinks created
@@ -19,7 +19,7 @@ Linking /usr/local/Cellar/git/2.19.0_1... 203 symlinks created
 
 シェルのプロファイル変更して対応。
 
-```console
+```bash
 $ echo 'export PATH="/usr/local/bin/git:$PATH"' >> ~/.zshrc
 ```
 
@@ -27,12 +27,12 @@ $ echo 'export PATH="/usr/local/bin/git:$PATH"' >> ~/.zshrc
 
 zsh前提。他のシェルなら適宜ファイル名変更。
 
-```console
+```bash
 $ git clone https://github.com/riywo/anyenv ~/.anyenv
 $ echo '# anyenv' >> ~/.zshrc
 $ echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.zshrc
 $ echo 'eval "$(anyenv init -)"' >> ~/.zshrc
-$ exec $SHELL -l
+$ exec $bash -l
 ```
 
 ## 各種env
@@ -41,13 +41,13 @@ $ exec $SHELL -l
 
 ndenvインストール
 
-```console
+```bash
 $ anyenv install ndenv
 ```
 
 nodejsインストール
 
-```console
+```bash
 $ ndenv install --list
 Available versions:
   v0.1.14
@@ -61,7 +61,7 @@ $ ndenv globalg v10.10.0
 
 yarnインストール
 
-```console
+```bash
 $ npm install -g yarn
 $ ndenv rehash
 ```
@@ -70,13 +70,13 @@ $ ndenv rehash
 
 goenvインストール
 
-```console
+```bash
 $ anyenv install goenv
 ```
 
 goインストール
 
-```console
+```bash
 $ goenv install --list
 ...
 $ goenv install 1.11.0
@@ -92,13 +92,13 @@ $ goenv global 1.11.0
 
 pyenv
 
-```console
+```bash
 $ anyenv install pyenv
 ```
 
 pythonインストール
 
-```console
+```bash
 $ pyenv install --list
 ...
 $ pyenv install 3.6.4
@@ -109,7 +109,7 @@ $ pyenv globalg 3.6.4
 
 GitHubのCLIツールをインストール
 
-```console
+```bash
 $ brew install hub
 ```
 
@@ -117,7 +117,7 @@ $ brew install hub
 
 適当にリポジトリ作成。
 
-```console
+```bash
 $ mkdir hub-example
 $ cd hub-example
 $ git init
@@ -142,7 +142,7 @@ https://github.com/uphy/hub-example
 
 originがgithubになっていることが確認できる。
 
-```console
+```bash
 $ git remote -v
 origin	git@github.com:uphy/hub-example.git (fetch)
 origin	git@github.com:uphy/hub-example.git (push)
@@ -152,8 +152,8 @@ origin	git@github.com:uphy/hub-example.git (push)
 
 `hub delete`で試みたがHTTP 403となった。
 
-```console
-❯ hub delete uphy/hub-example
+```bash
+$ hub delete uphy/hub-example
 Really delete repository 'uphy/hub-example' (yes/N)? yes
 Please edit the token used for hub at https://github.com/settings/tokens
 and verify that the `delete_repo` scope is enabled.
@@ -164,8 +164,8 @@ Must have admin rights to Repository.
 メッセージに従いURLにアクセスするとhub用のアクセストークンが作成されている。  
 そのトークンにdelete_repoのパーミッションを与えて、再実行する。
 
-```console
-hub delete uphy/hub-example
+```bash
+$ hub delete uphy/hub-example
 Really delete repository 'uphy/hub-example' (yes/N)? yes
 Deleted repository 'uphy/hub-example'.
 ```

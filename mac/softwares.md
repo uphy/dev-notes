@@ -2,7 +2,7 @@
 
 ## テキストエディタ: Emacs
 
-```console
+```bash
 $ brew install emacs
 ```
 
@@ -10,7 +10,7 @@ $ brew install emacs
 
 ## スクリーンショット: Kap
 
-```console
+```bash
 $ brew cask install kap
 ```
 
