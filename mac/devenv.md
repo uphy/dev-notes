@@ -31,7 +31,7 @@ zsh前提。他のシェルなら適宜ファイル名変更。
 $ git clone https://github.com/riywo/anyenv ~/.anyenv
 $ echo '# anyenv' >> ~/.zshrc
 $ echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.zshrc
-$ echo 'eval "$(anyenv init -)"' >> ~/.zshrc
+$ echo 'eval "$(anyenv init - zsh)"' >> ~/.zshrc
 $ exec $bash -l
 ```
 
